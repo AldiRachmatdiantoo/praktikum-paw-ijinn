@@ -39,7 +39,7 @@ class BukuController extends Controller
 
         Buku::create($request->all());
 
-        return redirect()->route('buku.index')->with('success', 'Buku berhasil ditambahkan');
+        return redirect()->route('buku.ajah')->with('success', 'Buku berhasil ditambahkan');
     }
 
     /**

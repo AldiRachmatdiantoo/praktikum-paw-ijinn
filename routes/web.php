@@ -23,7 +23,7 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth', 'role:admin'])->group(function () {
     
     // Halaman List Buku
-    Route::get('/buku', [BukuController::class, 'index'])->name('buku.index');
+    Route::get('/buku', [BukuController::class, 'index'])->name('buku.ajah');
     
     // Halaman Form Tambah Buku
     Route::get('/buku/create', [BukuController::class, 'create'])->name('buku.create');

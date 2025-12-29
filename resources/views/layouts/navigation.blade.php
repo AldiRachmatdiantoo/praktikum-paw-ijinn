@@ -14,7 +14,7 @@
                     </x-nav-link>
 
                     @if(Auth::user()->role === 'admin')
-                        <x-nav-link :href="route('buku.index')" :active="request()->routeIs('buku.*')">
+                        <x-nav-link :href="route('buku.create')" :active="request()->routeIs('buku.*')">
                             {{ __('Kelola Buku') }}
                         </x-nav-link>
                     @endif
@@ -72,7 +72,7 @@
             </x-responsive-nav-link>
 
             @if(Auth::user()->role === 'admin')
-                <x-responsive-nav-link :href="route('buku.index')" :active="request()->routeIs('buku.*')">
+                <x-responsive-nav-link :href="route('buku.ajah')" :active="request()->routeIs('buku.*')">
                     {{ __('Kelola Buku') }}
                 </x-responsive-nav-link>
             @endif
