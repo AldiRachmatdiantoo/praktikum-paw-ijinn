@@ -12,7 +12,8 @@ class BukuController extends Controller
      */
     public function index()
     {
-        //
+        $bukus = Buku::latest()->get();
+        return view('buku.index', compact('bukus'));
     }
 
     /**
@@ -20,7 +21,7 @@ class BukuController extends Controller
      */
     public function create()
     {
-        //
+        return view('buku.create');
     }
 
     /**
@@ -28,7 +29,17 @@ class BukuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'judul' => 'required',
+            'penulis' => 'required',
+            'penerbit' => 'required',
+            'tahun_terbit' => 'required|numeric',
+            'stok' => 'required|numeric',
+        ]);
+
+        Buku::create($request->all());
+
+        return redirect()->route('buku.index')->with('success', 'Buku berhasil ditambahkan');
     }
 
     /**
